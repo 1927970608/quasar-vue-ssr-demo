@@ -1,0 +1,120 @@
+@import "./variable";
+.check-account-order {
+  table {
+    tbody tr {
+      height: 60px;
+      td {
+        border-right: 1px solid rgba(0, 0, 0, 0.04);
+        &:first-child {
+        }
+        border-left: 1px solid rgba(0, 0, 0, 0.04);
+      }
+    }
+  }
+  .remark {
+    margin: 8px 0;
+    line-height: 22px;
+    .remark-title {
+      color: rgba(0, 0, 0, 0.45);
+    }
+    .remark-input {
+      display: inline-block;
+      width: 694px;
+      max-height: 64px;
+      word-break: break-all;
+    }
+    .total {
+      font-size: 16px;
+      color: #db3725;
+      line-height: 24px;
+    }
+  }
+}
+.check-account-order {
+  background: #fff;
+  padding: 16px;
+  .title{
+    height: 40px;
+    line-height: 40px;
+    padding: 0 16px;
+    border: none !important ;
+    span{
+      font-size: 14px;
+      color: rgba(0,0,0,0.45);
+      line-height: 22px;
+      em{
+        color: rgba(0,0,0,0.65);
+      }
+      &:first-child {
+        margin-right: 64px;
+      }
+    }
+  }
+  .bm-info {
+    margin-bottom: 4px;
+    padding: 0;
+    .title {
+      span{
+        margin-right: 24px;
+        b{
+          font-weight: bold;
+          font-size: 14px;
+          color: #000000;
+          text-align: right;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+  .order-info {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e8e8e8;
+    .content-line{
+      width: 50%;
+      line-height: 30px;
+      padding: 0 16px !important ;
+      .item{
+        color: rgba(0, 0, 0, 0.45);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        span {
+          color: rgba(0, 0, 0, 0.65);
+        }
+        &.m-t{
+          margin-top: 30px;
+        }
+      }
+      &:last-child {
+        margin-left: -182px;
+      }
+    }
+  }
+  .order-table{
+    border: 1px solid #AECAF5;
+    thead{
+      tr{
+        height: 32px;
+        line-height: 32px;
+        border-bottom: 1px solid #e8e8e8;
+      }
+    }
+    tbody{
+      tr{
+        border: none;
+        td{
+          &:first-child {
+            border-left: 1px solid #AECAF5;
+          }
+          &:last-child {
+            border-right: 1px solid #AECAF5;
+          }
+        }
+      }
+    }
+  }
+  .remark{
+    padding-left: 16px;
+  }
+}

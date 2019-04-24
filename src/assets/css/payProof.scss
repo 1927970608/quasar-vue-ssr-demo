@@ -1,0 +1,39 @@
+/* 上传支付凭证框 */
+.pay-proof {
+  .info {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+    line-height: 22px;
+    padding-bottom: 16px;
+    p {
+      margin-bottom: 8px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      span{
+        font-size: 14px;
+        color: rgba(0,0,0,0.65);
+        &.title {
+          color: rgba(0,0,0,0.45);
+        }
+      }
+    }
+  }
+  .control {
+    padding-top: 21px;
+    span{
+      float: left;
+      color: rgba(0,0,0,0.65);
+      line-height: 22px;
+    }
+    .upload {
+      float: left;
+      b{
+        display: inline-block;
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: normal;
+        color: rgba(0, 0, 0, 0.45);
+      }
+    }
+  }
+}

@@ -1,0 +1,182 @@
+@import "./variable";
+@import "./mixins";
+.order-change-detail {
+  margin-bottom: 110px;
+  width: 996px;
+  background: #fff;
+  .content-warp {
+    width: 996px;
+    .content-warp-header {
+      padding: 0 16px;
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      text-align: left;
+      font-size: 14px;
+      font-weight: bold;
+      color: $base-color;
+      background: #F7FAFF;
+      div.date-show {
+        font-weight: normal;
+        float: right;
+        font-size: 14px;
+        color: rgba(0,0,0,0.45);
+        span{
+          color: rgba(0,0,0,0.65);
+        }
+      }
+    }
+    .content-warp-main {
+      padding: 16px 16px;
+      .section {
+        .title {
+          margin-bottom: 16px;
+          position: relative;
+          padding-left: 10px;
+          font-size: 14px;
+          font-weight: bold;
+          color: rgba(0,0,0,0.65);
+          line-height: 22px;
+          &::before {
+            position: absolute;
+            top: 9px;
+            left: 0;
+            content: '';
+            width: 5.7px;
+            height: 5.7px;
+            transform: rotate(-315deg);
+            background: #3597D5;
+          }
+          &:not(.title-first){
+            margin-top: 20px;
+          }
+        }
+        .content{
+          >div{
+            width: 50%;
+            .list-item{
+              overflow: hidden;
+              margin-bottom: 16px;
+              font-size: 14px;
+              color: rgba(0,0,0,0.45);
+              text-align: right;
+              line-height: 22px;
+              span{
+                float: left;
+                display: inline-block;
+                line-height: 22px;
+                &:first-child {
+                  width: 70px;
+                  text-align: right;
+                }
+                &:last-child {
+                  width: 410px;
+                  text-align: left;
+                  color: rgba(0,0,0,0.65);
+                }
+              }
+              &.long{
+                span{
+                  &:first-child {
+                    width: 84px;
+                  }
+                  &:last-child {
+                    width: 396px;
+                  }
+                }
+              }
+              span{
+                font-size: 14px;
+                line-height: 22px;
+                em{
+                  &.change{
+                    color: #DB3725;
+                  }
+                  &.old{
+                    color: #000000;
+                    text-decoration:line-through
+                  }
+                }
+              }
+            }
+            &.change-width {
+              .list-item {
+                span{
+                  &:first-child {
+                    width: 84px;
+                  }
+                  &:last-child {
+                    width: 396px;
+                  }
+                }
+              }
+            }
+          }
+          .order-change-table {
+            border: 1px solid #e8e8e8;
+            thead{
+              th{
+                padding:5px 0;
+                vertical-align: middle;
+                font-weight: normal;
+                background: #F5F5F5;
+                color: rgba(0,0,0,0.45);
+              }
+              border-bottom: 1px solid #e8e8e8;
+            }
+            tbody{
+              tr.product{
+                border-bottom: none;
+                td{
+                  padding: 8px 5px;
+                  text-align: center;
+                  border-right: none;
+                  border-bottom: 1px solid #e8e8e8;
+                  p{
+                    font-size: 14px;
+                    color: rgba(0,0,0,0.65);
+                    line-height: 22px;
+                    span{
+                      &.text-overflow{
+                        max-width: 150px;
+                        display: inline-block;
+                        vertical-align: bottom;
+                      }
+                    }
+                  }
+                  .change{
+                    color: #DB3725;
+                  }
+                  .old{
+                    color: rgba(0,0,0,0.45);
+                    text-decoration:line-through
+                  }
+                  &:last-child {
+                    border-left: 1px solid #F5F5F5;
+                    border-bottom: none;
+                    &.row-span{
+                      vertical-align: top;
+                      p{
+                        white-space: pre-wrap;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            &.accept-or-returns {
+              tr.product{
+                td{
+                  &:last-child {
+                    border-left: none;
+                    border-bottom: 1px solid #e8e8e8;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
