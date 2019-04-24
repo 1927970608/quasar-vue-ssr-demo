@@ -2,14 +2,70 @@
   <header class="main-header">
     <div class="container header-wrap">
       <a class="fl" href="https://www.usoftchina.com">
-        <img class="align-middle" src="~assets/img/uas.png" alt="" />
+        <img class="align-middle" src="../../assets/img/uas.png" alt="" />
         进入优软云
       </a>
+      <!-- <div class="fr">
+        <template v-if="!user.logged">
+          <span class="item" @click="login">登录</span>
+          <span class="item" @click="register">注册</span>
+        </template>
+        <div class="inlineb drop-down" v-else>
+          <span class="item item-user">欢迎您，{{ user.userInfo.name }}&nbsp;|&nbsp;{{ user.currentEnterpriseInfo.name }}&nbsp;&nbsp;</span>
+          <span class="item" @click="logout">[退出]</span>
+          <ul>
+            <li class="menu-item-first">您可切换至以下账户：</li>
+            <li v-for="(en, index) in user.enterpriseInfo" @click="switchEn(en)" :title="en.name" :key="index">
+              <a v-text="en.name"></a>
+            </li>
+          </ul>
+        </div>
+        <router-link to="/" class="item">商城首页</router-link>
+        <template v-if="user.logged">
+          <router-link to="/user/home" class="item">买家中心</router-link>
+          <router-link to="/openVendorProxy" class="item" v-if="!isPersonUser">卖家中心</router-link>
+          <a :href="ssoCenterUrl" target="_blank" class="item">账户中心</a>
+        </template>
+      </div> -->
     </div>
   </header>
 </template>
 <script>
-
+// import { mapGetters } from 'vuex'
+// import { comHeader } from '@/utils/mixins'
+export default {
+  data: () => ({
+    cartCount: 0
+  }),
+  beforeCreate () {
+    // document.cookie = '125'
+  },
+  created () {
+    // widnow.alert(1)
+  },
+  mounted () {
+    // window.alert(1)
+  },
+  methods: {
+    login () {
+      window.location.href = this.loginUrl + `?returnUrl=${encodeURIComponent(window.location.href)}`
+    },
+    logout () {
+      this.$http.sso.logout({}).then(() => {
+        window.location.href = '/'
+      })
+    },
+    register () {
+      window.location.href = this.registerUrl + `?returnUrl=${encodeURIComponent(window.location.href)}`
+    },
+    switchEn (en) {
+      this.$http.sso.switchEnterprise({ enuu: en.enuu }).then(() => {
+        window.location.href = '/'
+        this.$store.dispatch('auth/getAuth')
+      })
+    }
+  }
+}
 </script>
 <style lang="scss" scoped>
 .inlineb {

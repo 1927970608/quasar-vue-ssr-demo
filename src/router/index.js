@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+// import store from '../store'
 import routes from './routes'
 
 Vue.use(VueRouter)
@@ -11,7 +12,7 @@ Vue.use(VueRouter)
  */
 
 export default function (/* { store, ssrContext } */) {
-  const Router = new VueRouter({
+  const route = new VueRouter({
     scrollBehavior: () => ({ y: 0 }),
     routes,
 
@@ -21,6 +22,28 @@ export default function (/* { store, ssrContext } */) {
     mode: process.env.VUE_ROUTER_MODE || 'history',
     base: process.env.VUE_ROUTER_BASE || '/'
   })
+  route.beforeEach((to, from, next) => {
+    // 登陆守卫
+    if (to.meta.title) {
+      console.log(to.meta)
+      // document.title = to.meta.title
+    }
+    // store.dispatch('options/setRouterLoading', true)
+    // if (!store.state.auth.user.getAuthed) {
+    //   store.dispatch('auth/getAuth').then(() => {
+    //     next()
+    //   }, () => {
+    //     next()
+    //   })
+    // } else {
+    //   next()
+    // }
+    next()
+  })
 
-  return Router
+  route.afterEach(() => {
+    // store.dispatch('options/setRouterLoading', false)
+    // document.getElementById('app').scrollTop = 0
+  })
+  return route
 }

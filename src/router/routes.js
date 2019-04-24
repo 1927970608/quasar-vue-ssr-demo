@@ -1,6 +1,6 @@
 const routes = [
   {
-    path: '/',
+    path: '/:id',
     name: 'home',
     meta: {
       title: '首页'
@@ -8,7 +8,6 @@ const routes = [
     component: () => import(/* webpackChunkName: "Home" */ '../pages/Home.vue')
   }
 ]
-
 // Always leave this as last one
 if (process.env.MODE !== 'ssr') {
   routes.push({
