@@ -25,7 +25,7 @@ export default function (/* { store, ssrContext } */) {
   route.beforeEach((to, from, next) => {
     // 登陆守卫
     if (to.meta.title) {
-      console.log(to.meta)
+      // console.log(to.meta)
       // document.title = to.meta.title
     }
     // store.dispatch('options/setRouterLoading', true)

@@ -1,5 +1,5 @@
 <template>
-  <div id="q-app">
+  <div>
     <main-header></main-header>
       <router-view />
   </div>
@@ -22,11 +22,11 @@ export default {
   // for you to reference properties from the Vue component's scope
 // ...
 
-  // meta: {
-  //   meta: {
-  //     myKey: { name: 'description', content: 'My Website' }
-  //   }
-  // },
+  meta: {
+    meta: {
+      myKey: { name: 'description', content: 'My Website' }
+    }
+  },
   methods: {
     setAnotherTitle () {
       this.title = 'Another title' // will automatically trigger a Meta update due to the binding

@@ -8,7 +8,6 @@ module.exports = function (ctx) {
     plugins: [
       'axios',
       { path: 'u-element', server: false },
-      'Meta',
       { path: 'u-component', server: false },
     ],
     css: [
@@ -24,11 +23,11 @@ module.exports = function (ctx) {
     supportIE: true,
     build: {
       scopeHoisting: true,
-      // vueRouterMode: 'history',
+      vueRouterMode: 'history',
       // vueCompiler: true,
-      // gzip: true,
-      // analyze: true,
-      // extractCSS: false,
+      gzip: true,
+      analyze: true,
+      extractCSS: true,
       extendWebpack (cfg) {
         console.log('cfg:', cfg)
         
@@ -47,29 +46,8 @@ module.exports = function (ctx) {
     },
     // framework: 'all' --- includes everything; for dev only!
     framework: {
-      components: [
-        'QLayout',
-        'QLayoutHeader',
-        'QLayoutDrawer',
-        'QPageContainer',
-        'QPage',
-        'QToolbar',
-        'QToolbarTitle',
-        'QBtn',
-        'QIcon',
-        'QList',
-        'QListHeader',
-        'QItem',
-        'QItemMain',
-        'QItemSide'
-      ],
-      directives: [
-        'Ripple'
-      ],
       // Quasar plugins
-      plugins: [
-        'Notify'
-      ]
+      plugins: ['Meta']
       // iconSet: ctx.theme.mat ? 'material-icons' : 'ionicons'
       // i18n: 'de' // Quasar language
     },
