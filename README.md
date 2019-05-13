@@ -1,15 +1,17 @@
-### Quasar App
 
-启动   
+### quasar-ssr-demo
 
+> 测试id：**5433d5e4e737cbe96dcef312**
+
+### Build Setup
+
+``` bash
+# install dependencies
+$ npm install
+
+# serve with hot reload at localhost:xxxx
+$ quasar dev -m ssr
 ```
-quasar dev -m ssr
-
-```
-
-测试id：**5433d5e4e737cbe96dcef312**
-
----
 
 ### 一、Prerendering（预渲染）  
 采用技术：prerender-spa-plugin + vue-meta-info   
@@ -73,3 +75,4 @@ Quasar是一款允许开发人员编写代码一次，并使用相同的代码�
 | nuxt.js             |     平滑开箱即用，配置丰富  | 对现有代码改动大  | 
 | Quasar Framework        | 平滑开箱即用       |     对现有代码改造大，且ssr功能较nuxt.js稍少，且只支持ie11+         |
 | node + 动态页面模板        |      对现有代码改动量一般    |   需重新开发seo页面的代码，为风格统一，公共部分代码需维护两份，维护起来麻烦。|# vue-quasar-demo
+# vue-quasar-demo
