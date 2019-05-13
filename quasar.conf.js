@@ -1,7 +1,6 @@
 // Configuration for your app
 
 module.exports = function (ctx) {
-  console.log(ctx)
   return {
     preFetch: true,
     // app plugins (/src/plugins)
@@ -29,8 +28,6 @@ module.exports = function (ctx) {
       analyze: true,
       extractCSS: true,
       extendWebpack (cfg) {
-        console.log('cfg:', cfg)
-        
         // cfg.module.rules.push({
         //   enforce: 'pre',
         //   test: /\.(js|vue)$/,

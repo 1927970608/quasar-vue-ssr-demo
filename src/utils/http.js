@@ -17,6 +17,7 @@ axios.interceptors.request.use(
       // ++reqCount
       // setLoadingCount()
     }
+    console.log('config', config)
     return config
   },
   error => {
@@ -55,6 +56,8 @@ axios.interceptors.response.use(
 
 export function get (url, loading = false) {
   return function (params) {
+    console.log('params', params)
+    console.log('url', url)
     return axios({
       method: 'get',
       url: `${url}?t=${new Date().getTime()}`,

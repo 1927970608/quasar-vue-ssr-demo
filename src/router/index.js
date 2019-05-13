@@ -15,10 +15,6 @@ export default function (/* { store, ssrContext } */) {
   const route = new VueRouter({
     scrollBehavior: () => ({ y: 0 }),
     routes,
-
-    // Leave these as is and change from quasar.conf.js instead!
-    // quasar.conf.js -> build -> vueRouterMode
-    // quasar.conf.js -> build -> publicPath
     mode: process.env.VUE_ROUTER_MODE || 'history',
     base: process.env.VUE_ROUTER_BASE || '/'
   })
@@ -28,16 +24,6 @@ export default function (/* { store, ssrContext } */) {
       // console.log(to.meta)
       // document.title = to.meta.title
     }
-    // store.dispatch('options/setRouterLoading', true)
-    // if (!store.state.auth.user.getAuthed) {
-    //   store.dispatch('auth/getAuth').then(() => {
-    //     next()
-    //   }, () => {
-    //     next()
-    //   })
-    // } else {
-    //   next()
-    // }
     next()
   })
 
